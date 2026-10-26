@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thank You | Pazey Coding & Development</title>
+    <meta name="description" content="Thank you for contacting Pazey Coding & Development. I'll be in touch soon to discuss your business and how I can help.">
+    <meta name="robots" content="noindex, follow">
+
+    <link rel="icon" href="pazey-coding-logo.PNG" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --purple: #9B41F2;
+            --deep-purple: #3B1466;
+            --blue: #566DF6;
+            --cyan: #00B2FF;
+            --bright-cyan: #00F0FF;
+            --bg: #080A16;
+            --text: #F5F5FF;
+            --muted: #B9BED4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(ellipse at 15% 20%, rgba(86, 109, 246, 0.18), transparent 45%),
+                radial-gradient(ellipse at 85% 80%, rgba(155, 65, 242, 0.18), transparent 45%),
+                var(--bg);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(0, 178, 255, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 178, 255, 0.045) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: linear-gradient(to bottom, black, transparent 90%);
+        }
+
+        .thank-you-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            padding: 55px 40px;
+            text-align: center;
+            border: 1px solid rgba(0, 178, 255, 0.25);
+            border-radius: 20px;
+            background: rgba(15, 18, 38, 0.88);
+            box-shadow:
+                0 0 50px rgba(86, 109, 246, 0.12),
+                0 0 80px rgba(155, 65, 242, 0.08);
+            backdrop-filter: blur(12px);
+        }
+
+        .logo {
+            display: block;
+            width: 130px;
+            height: auto;
+            margin: 0 auto 30px;
+        }
+
+        .success-icon {
+            width: 76px;
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            border: 2px solid var(--bright-cyan);
+            border-radius: 50%;
+            color: var(--bright-cyan);
+            font-size: 40px;
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            line-height: 1.3;
+            background: linear-gradient(90deg, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .intro {
+            max-width: 510px;
+            margin: 0 auto 18px;
+            color: var(--text);
+            font-size: 1.35rem;
+            line-height: 1.6;
+        }
+
+        .details {
+            max-width: 490px;
+            margin: 0 auto 32px;
+            color: var(--muted);
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border: 1px solid var(--cyan);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .btn-primary {
+            color: #080A16;
+            background: linear-gradient(100deg, var(--cyan), var(--bright-cyan));
+            border-color: transparent;
+        }
+
+        .btn-secondary {
+            color: var(--text);
+            background: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 178, 255, 0.2);
+        }
+
+        .tagline {
+            margin-top: 35px;
+            color: var(--muted);
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .tagline span {
+            color: var(--bright-cyan);
+        }
+
+        @media (max-width: 500px) {
+            .thank-you-container {
+                padding: 40px 22px;
+            }
+
+            .logo {
+                width: 110px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="thank-you-container">
+
+        <a href="index.html" aria-label="Pazey Coding & Development homepage">
+            <img
+                src="pazey-coding-logo.PNG"
+                alt="Pazey Coding & Development"
+                class="logo"
+            >
+        </a>
+
+        <div class="success-icon" aria-hidden="true">✓</div>
+
+        <h1>Message Received!</h1>
+
+        <p class="intro">
+            Thanks for reaching out!
+        </p>
+
+        <p class="details">
+            Your message has been submitted successfully. I'll be in touch soon
+            to learn more about your business, your goals, and how Pazey Coding
+            & Development can help bring your vision to life.
+        </p>
+
+        <div class="buttons">
+            <a href="index.html" class="btn btn-primary">
+                Back to Home
+            </a>
+
+            <a href="pazey-portfolio.html" class="btn btn-secondary">
+                Explore My Work
+            </a>
+        </div>
+
+        <p class="tagline">
+            Creativity <span>Meets</span> Technology
+        </p>
+
+    </main>
+</body>
+</html>
