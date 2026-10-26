@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>Website Design & Development | Pazey Coding</title>
+
+<meta name="description" content="Custom website design and development for small businesses by Pazey Coding & Development. Get a mobile-friendly website, website overhaul, or SEO tune-up tailored to your goals.">
+
+<meta name="keywords" content="website design and development, custom website design, small business websites, website development services, website redesign, website overhaul, mobile-friendly websites, website SEO">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://pazeycoding.com/webdevelopmentservice.html">
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Website Design & Development | Pazey Coding">
+<meta property="og:description" content="Custom-built websites, website overhauls, and SEO improvements designed to help your business stand out online.">
+<meta property="og:url" content="https://pazeycoding.com/webdevelopmentservice.html">
+<meta property="og:site_name" content="Pazey Coding & Development">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="pazey.css" rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        /* Specific Page Overrides & Full-Width Button Fixes */
+        .page-header {
+            padding: 140px 20px 60px;
+            text-align: center;
+        }
+
+        .service-details {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .benefit-card {
+            background: rgba(15, 15, 25, 0.377);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: #566DF6;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00f0ff;
+            margin-bottom: 15px;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            background: rgba(15, 15, 25, 0.4);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #8b7cf6;
+        }
+
+        .step-num {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: #00B2FF;
+            font-weight: bold;
+        }
+
+        /* Full-Width Button Implementation */
+        .full-width-cta-container {
+            width: 100% !important;
+            padding: 60px 20px;
+            box-sizing: border-box;
+            background: rgba(10, 10, 20, 0.8);
+            border-top: 1px solid rgba(0, 240, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .full-width-btn {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            padding: 18px 20px !important;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        
+/* Website Packages */
+.packages-section {
+    margin-top: 70px;
+    padding: 50px 0 20px;
+    border-top: none;
+}
+
+.packages-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    align-items: stretch;
+    margin: 40px 0;
+}
+
+.package-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(15, 15, 25, 0.377);
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    border-radius: 12px;
+    padding: 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    border-color: #566DF6;
+    box-shadow: 0 8px 30px rgba(0, 240, 255, 0.08);
+}
+
+.package-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00F0FF;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.package-price {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 5px 0 20px;
+}
+
+.package-description {
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.package-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+}
+
+.package-features li {
+    position: relative;
+    padding: 0 0 13px 25px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.package-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #566DF6;
+    font-weight: bold;
+}
+
+.package-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+    padding: 14px 16px;
+    border: 1px solid #9B41F2;
+    border-radius: 5px;
+    color: #9B41F2;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.package-cta:hover {
+    background: #566DF6;
+    color: #0a0a14;
+}
+
+.package-note {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.7;
+    margin-top: 25px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .packages-section {
+        margin-top: 45px;
+        padding-top: 35px;
+    }
+
+    .package-card {
+        padding: 25px 22px;
+    }
+
+    .package-price {
+        font-size: 1.7rem;
+    }
+}
+
+/* Website Care & Additional Services */
+.extra-services-section {
+    margin-top: 50px;
+    padding: 50px 0;
+    border-top: none;
+}
+
+.extra-services-intro {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.extra-service-card {
+    max-width: 850px;
+    margin: 0 auto 30px;
+    padding: 35px;
+    background: rgba(15, 15, 25, 0.377);
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    border-radius: 12px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.extra-service-card:hover {
+    border-color: #566DF6;
+    transform: translateY(-3px);
+}
+
+.extra-service-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00F0FF;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.extra-service-price {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 10px 0 20px;
+}
+
+.extra-service-card p {
+    line-height: 1.7;
+}
+
+.extra-service-card .package-features {
+    margin-top: 20px;
+}
+
+.extra-service-card .package-cta {
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .extra-service-card {
+        padding: 25px 20px;
+    }
+
+    .extra-service-price {
+        font-size: 1.5rem;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Background Animation Layer -->
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+    <div class="scanlines"></div>
+    <div id="particles"></div>
+
+       <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-link">
+                <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                 
+                </svg>
+                <button id="themeToggle" class="theme-toggle" type="button">
+    <span id="themeIcon">☾</span>
+</button>
+            </a>
+     <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    
+    <li class="dropdown">
+        <a href="#features" class="nav-link dropdown-toggle">Services <span class="arrow">▾</span></a>
+        <ul class="dropdown-menu">
+            <li><a href="webdevelopmentservice.html" class="dropdown-item">Website Design & Development</a></li>
+             <li><a href="socialmediamanagement.html" class="dropdown-item">Social Media Management</a></li>
+             <li><a href="googlebusinessprofile.html" class="dropdown-item">Google Business Profile</a></li>
+             <li><a href="seo.html" class="dropdown-item">Search Engine Optimization</a></li>
+             <li><a href="brandgraphicdesign.html" class="dropdown-item">Branding & Graphic Design</a></li>
+           
+           
+        </ul>
+    </li>
+<li><a href="index.html#about" class="nav-link">About</a></li>
+<li><a href="pazey-portfolio.html" class="nav-link">Portfolio</a></li>
+<li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
+<li><a href="index.html#contact" class="nav-link">Contact</a></li>
+
+    <!-- Social Media Icons -->
+    <li class="social-icons">
+        <a href="https://www.instagram.com/pazey.coding?cplk=MXRjMmFpZzNqYncyaA%3D%3D&utm_source=qr"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.facebook.com/share/1HNNLjMgZ5/?mibextid=wwXIfr"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </li>
+</ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <!-- Header Section -->
+    <header class="page-header">
+        <h1 class="glitch-text">WEB DESIGN & DEVELOPMENT</h1>
+        <p class="subtitle">Custom, fast, and mobile-friendly websites built around your goals.</p>
+    </header>
+   
+    <!-- Main Content -->
+  <main class="service-details">
+    <section>
+        <div class="benefits-grid">
+
+            <div class="benefit-card">
+                <i class="fa-solid fa-code benefit-icon"></i>
+                <h3>Custom Ground-Up Builds</h3>
+                <p>Clean code tailored strictly to your brand requirements. No bloated template builders slowing down your page performance.</p>
+            </div>
+
+            <div class="benefit-card">
+                <i class="fa-solid fa-arrows-rotate benefit-icon"></i>
+                <h3>Website Overhauls</h3>
+                <p>Modernize your old website with an updated look, improved user experience, and mobile layout optimizations.</p>
+            </div>
+
+            <div class="benefit-card">
+                <i class="fa-solid fa-chart-line benefit-icon"></i>
+                <h3>SEO Tune-Up for Existing Websites</h3>
+                <p>Already have a website? An SEO Tune-Up takes a closer look at what’s happening behind the scenes and identifies opportunities to help your website perform better in search results.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+<!-- Website Development Process -->
+<section class="process-section" id="process">
+
+    <h2 class="section-title">From Concept to Launch</h2>
+
+
+    <div class="process-step">
+        <div class="step-num">01</div>
+        <div>
+            <h3>Discovery &amp; Strategy</h3>
+            <p>
+                We discuss your business goals, target audience, brand identity,
+                and website requirements to establish a clear direction for
+                your project and plan a structure that works for your business.
+            </p>
+        </div>
+    </div>
+
+    <div class="process-step">
+        <div class="step-num">02</div>
+        <div>
+            <h3>Design &amp; Development</h3>
+            <p>
+                Your website is built from the ground up with a focus on
+                your brand, custom styling, typography, layout, functionality,
+                and responsive design across desktop and mobile devices.
+            </p>
+        </div>
+    </div>
+
+    <div class="process-step">
+        <div class="step-num">03</div>
+        <div>
+            <h3>Review &amp; Refinements</h3>
+            <p>
+                Once development is complete, the website will be sent to you for
+                review. Any requested changes and adjustments are addressed
+                before the site officially launches.
+            </p>
+        </div>
+    </div>
+
+    <div class="process-step">
+        <div class="step-num">04</div>
+        <div>
+            <h3>Launch &amp; Support</h3>
+            <p>
+                Your website goes live and is ready for visitors! After launch,
+                additional changes and updates can be completed at a standard
+                hourly rate, with optional ongoing support available if needed. 
+            </p>
+        </div>
+    </div>
+
+
+</section>
+
+    
+
+<!-- Website Packages -->
+<section class="packages-section" id="packages">
+    <h2 class="section-title">Website Packages</h2>
+
+    <p class="packages-intro">
+        One-time investment. Custom-built to fit your business.
+        Choose the package that suits your goals, with no mandatory
+        monthly website subscription fees.
+    </p>
+
+    <div class="packages-grid">
+
+        <!-- Single Page Website -->
+        <div class="package-card">
+            <h3>Single Page Website</h3>
+            <p class="package-price">$400</p>
+
+            <p class="package-description">
+                A complete, custom-designed website that puts everything
+                your customers need in one easy-to-navigate place.
+            </p>
+
+            <ul class="package-features">
+                <li>Custom design tailored to your business, brand colours, and style</li>
+                <li>One complete scrolling page with sections such as Home, About, Services, Gallery, and Contact</li>
+                <li>Contact form and calls to action to encourage calls, emails, bookings, or quote requests</li>
+                <li>Social media links to your business profiles</li>
+                <li>Basic SEO setup, including page title, meta description, headings, image alt text, and relevant keywords</li>
+                <li>Domain name cost covered for the first year (typically $25–$30 per year)</li>
+            </ul>
+
+            <a href="index.html#contact" class="package-cta">
+                Choose Single Page →
+            </a>
+        </div>
+
+        <!-- Multi-Page Website -->
+        <div class="package-card">
+            <h3>Multi-Page Website</h3>
+            <p class="package-price">$600</p>
+
+            <p class="package-description">
+                More room to showcase your business, organize your services,
+                and give visitors a complete picture of what you offer.
+            </p>
+
+            <ul class="package-features">
+                <li>Custom design tailored to your branding and business goals</li>
+                <li>3–6 custom-coded pages, such as Home, About, Services, Gallery, FAQs, and Contact</li>
+                <li>SEO setup on every page, including page titles, meta descriptions, heading structure, relevant keywords, and image alt text</li>
+                <li>Navigation menu and footer linking all pages for easy browsing</li>
+                <li>Contact form and calls to action to encourage inquiries, calls, bookings, or quote requests</li>
+                <li>Social media integration with links to your business profiles</li>
+            </ul>
+
+            <a href="index.html#contact" class="package-cta">
+                Choose Multi-Page →
+            </a>
+        </div>
+
+        <!-- Large Website -->
+        <div class="package-card">
+            <h3>Large Website</h3>
+            <p class="package-price">Custom Quote</p>
+
+            <p class="package-description">
+                For larger projects that need more pages, advanced functionality,
+                or a more tailored website experience.
+            </p>
+
+            <ul class="package-features">
+                <li>Pricing tailored to your individual project</li>
+                <li>Custom design and development based on your goals</li>
+                <li>Scope based on page count and design complexity</li>
+                <li>Content requirements and integrations considered</li>
+                <li>Custom features discussed and quoted before work begins</li>
+            </ul>
+
+            <a href="index.html#contact" class="package-cta">
+                Discuss Your Project →
+            </a>
+        </div>
+
+    </div>
+
+<!-- Ongoing Website Care -->
+<section class="extra-services-section" id="website-care">
+
+    <h2 class="section-title">Keep Your Website Growing</h2>
+
+
+    <div class="extra-service-card">
+        <h3>Website Care & Growth</h3>
+
+        <p class="extra-service-price">$100 / Month</p>
+
+        <p>
+            Ongoing website maintenance and improvements to help keep your
+            website current, secure, and working for your business.
+        </p>
+
+        <ul class="package-features">
+            <li>Domain renewal covered while your plan is active</li>
+            <li>Up to 2 hours of website edits and updates per month</li>
+            <li>Ongoing SEO improvements to support search visibility</li>
+            <li>Security and software updates, where applicable</li>
+            <li>Monthly performance report, including website traffic analysis</li>
+        </ul>
+
+        <a href="index.html#contact" class="package-cta">
+            Explore Website Care →
+        </a>
+    </div>
+
+</section>
+
+<!-- SEO Tune-Up -->
+<section class="extra-services-section" id="seo-tune-up">
+
+    <h2 class="section-title">The SEO Tune-Up</h2>
+
+    <p class="extra-services-intro">
+        Already have a website? Give it an SEO refresh. This focused
+        checkup identifies opportunities to improve your existing content,
+        strengthen your site's foundations, and help search engines
+        understand your pages.
+    </p>
+
+    <div class="extra-service-card">
+        <h3>The SEO Tune-Up</h3>
+
+        <p class="extra-service-price">$100 <span style="font-size: 0.85rem; font-family: 'Rajdhani', sans-serif; font-weight: 400;">/ One-Time</span></p>
+
+        <ul class="package-features">
+            <li>
+                <strong>Title & Meta Description Refresh</strong> —
+                improve page titles and search-result descriptions.
+            </li>
+            <li>
+                <strong>Keyword Tune-Up</strong> —
+                identify relevant search phrases and incorporate them
+                naturally into existing content.
+            </li>
+            <li>
+                <strong>Image Alt Text Check</strong> —
+                add or improve descriptive text for meaningful images.
+            </li>
+            <li>
+                <strong>Internal Link Check</strong> —
+                identify broken links and improve connections between
+                relevant pages.
+            </li>
+            <li>
+                <strong>Technical Checks</strong> —
+                review mobile usability and obvious indexing or
+                accessibility issues.
+            </li>
+            <li>
+                <strong>SEO Action Summary</strong> —
+                outline the improvements made and recommend next steps.
+            </li>
+        </ul>
+
+        <a href="index.html#contact" class="package-cta">
+            Book an SEO Tune-Up →
+        </a>
+    </div>
+
+</section>
+
+
+     <!-- FAQ -->
+    <section class="testimonials" id="faq">
+        <h2 class="section-title">Website FAQ</h2>
+
+        <div class="testimonial-slider">
+            <div class="slides-wrapper">
+
+                <div class="testimonial-slide active">
+                    <h3>Do you use templates?</h3>
+                    <p class="testimonial-quote">
+                        My websites are custom designed and developed around each business.
+                        I don't take your business and simply drop it into a generic layout.
+                    </p>
+                </div>
+
+                    <div class="testimonial-slide">
+                    <h3>Can you redesign an existing website?</h3>
+                    <p class="testimonial-quote">
+                        Absolutely. A project can start from scratch or build on an existing
+                        website when an update, redesign or technical improvement makes more sense.
+                    </p>
+                </div>
+
+                <div class="testimonial-slide">
+                    <h3>Do I have to pay monthly fees to keep my website active?</h3>
+                    <p class="testimonial-quote">
+                    No monthly fees necessary! The only fee you will see after the website build is the domain (website name) cost which is only $25-$30 per YEAR
+                    </p>
+                </div>
+
+                <div class="testimonial-slide">
+                    <h3>Can I request changes before my website launches?</h3>
+                    <p class="testimonial-quote">
+               Absolutely! Your package includes a review period for the website and any requests or adjustments can be made before launch. 
+                    </p>
+                </div>
+
+                     <div class="testimonial-slide">
+                    <h3>Can I update my website after it launches?</h3>
+                    <p class="testimonial-quote">
+                      Yes! You can request updates through Pazey at the applicable hourly rate, or choose the Website Care & Growth plan for ongoing support and up to two hours of website edits per month.
+                    </p>
+                </div>
+
+                         <div class="testimonial-slide">
+                    <h3>Do I own my website?</h3>
+                    <p class="testimonial-quote">
+                      Yes! You own the code to your website that you paid for and can request it at any time. 
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn" id="prevTestimonial" type="button">❮</button>
+                <div class="slider-dots" id="testimonialDots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                     <span class="dot" data-index="3"></span>
+                      <span class="dot" data-index="4"></span>
+                       <span class="dot" data-index="5"></span>
+                </div>
+                <button class="slider-btn next-btn" id="nextTestimonial" type="button">❯</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+    <!-- Footer -->
+    <footer class="site-footer" id="footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <a href="index.html#home" class="footer-logo">
+                    <img src="pazey-coding-logo.PNG"
+                         alt="Pazey Coding & Development Logo">
+                </a>
+
+                <h3>PAZEY CODING <span>& DEVELOPMENT</span></h3>
+
+                <p>
+                    Creativity Meets Technology.
+                    Custom websites, digital design, and technology
+                    solutions built around your business.
+                </p>
+
+                <a href="index.html#contact" class="footer-cta">
+                    Let's Work Together <span>→</span>
+                </a>
+            </div>
+
+       <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html#about">About Pazey</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="pazey-portfolio.html">Portfolio</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-column">
+                <h4>Digital Solutions</h4>
+                <ul>
+                    <li><a href="webdevelopmentservice.html">Website Design & Development</a></li>
+                    <li><a href="socialmediamanagement.html">Social Media Management</a></li>
+                    <li><a href="seogooglebusinessprofile.html">Google Business Profile</a></li>
+                    <li><a href="seoservices.html">SEO Services</a></li>
+                    <li><a href="brandgraphicdesign.html">Branding & Graphic Design</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-connect">
+                <h4>Connect</h4>
+
+                <p>Have a project in mind or need a little tech help?</p>
+
+                <a href="mailto:pazeycoding@gmail.com" class="footer-contact-link">
+                    <span>✉</span> pazeycoding@gmail.com
+                </a>
+
+                <a href="tel:+16479669694" class="footer-contact-link">
+                    <span>☎</span> 647-966-9694
+                </a>
+
+                <div class="footer-socials">
+                    <!-- Replace these placeholders with your real profile URLs. -->
+                    <a href="https://www.facebook.com/share/1HNNLjMgZ5/?mibextid=wwXIfr"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/pazey.coding?cplk=MXRjMmFpZzNqYncyaA%3D%3D&utm_source=qr"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">
+                © <span id="footerYear"></span> Pazey Coding & Development.
+                All rights reserved.
+            </p>
+
+
+            <a href="#home" class="back-to-top">Back to Top ↑</a>
+        </div>
+    </footer>
+
+<script>
+    document.getElementById("footerYear").textContent =
+        new Date().getFullYear();
+</script>
+
+
+    <!-- Scripts -->
+    <script src="pazeycoding.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const button = document.getElementById("themeToggle");
+            const icon = document.getElementById("themeIcon");
+
+            if (!button) return;
+
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.body.classList.toggle("light-mode");
+
+                if (document.body.classList.contains("light-mode")) {
+                    icon.textContent = "☀";
+                    localStorage.setItem("theme", "light");
+                } else {
+                    icon.textContent = "☾";
+                    localStorage.setItem("theme", "dark");
+                }
+            });
+
+            if (localStorage.getItem("theme") === "light") {
+                document.body.classList.add("light-mode");
+                icon.textContent = "☀";
+            }
+        });
+    </script>
+    
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".testimonial-slider");
+
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll(".testimonial-slide");
+    const dots = slider.querySelectorAll(".dot");
+    const prevBtn = slider.querySelector(".prev-btn");
+    const nextBtn = slider.querySelector(".next-btn");
+
+    if (!slides.length) return;
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === currentIndex);
+        });
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === currentIndex);
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener("click", function () {
+            showSlide(currentIndex - 1);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener("click", function () {
+            showSlide(currentIndex + 1);
+        });
+    }
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", function () {
+            showSlide(i);
+        });
+    });
+
+    showSlide(0);
+});
+</script>
+
+<!-- Mobile Navigation Fix -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (!menuToggle || !navLinks) return;
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+
+        const isOpen = navLinks.classList.contains("active");
+        menuToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    // Close menu when a navigation link is clicked
+    navLinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            // Allow dropdown toggles to be handled separately
+            if (link.classList.contains("dropdown-toggle")) return;
+
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+});
+</script>
+</body>
+</html>

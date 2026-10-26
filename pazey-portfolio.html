@@ -1,0 +1,1253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+<title>Website Design Portfolio | Pazey Coding & Development</title>
+
+<meta name="description" content="Explore custom websites, branding, graphic design, and social media projects by Pazey Coding & Development, serving small businesses in Peterborough and the Kawartha Lakes.">
+
+<meta name="author" content="Pazey Coding & Development">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://pazeycoding.com/pazey-portfolio.html">
+
+<!-- Open Graph: Facebook and social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Website Design & Creative Portfolio | Pazey Coding">
+<meta property="og:description" content="See custom websites, branding, graphic design, and digital content created for small businesses by Pazey Coding & Development.">
+<meta property="og:url" content="https://pazeycoding.com/pazey-portfolio.html">
+<meta property="og:image" content="https://pazeycoding.com/pazey-coding-logo.PNG">
+
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="pazey.css" rel="stylesheet">
+       <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* Portfolio Page */
+        .portfolio-page {
+            overflow: hidden;
+        }
+
+        .portfolio-page .page-header {
+            padding: 140px 20px 55px;
+            text-align: center;
+        }
+
+        .portfolio-page .page-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-page .page-header .subtitle {
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .portfolio-page .eyebrow {
+            color: #00f0ff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-page .accent-text {
+            color: #00f0ff;
+        }
+
+        .portfolio-page .portfolio-intro {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 25px 20px 35px;
+            text-align: center;
+        }
+
+        .portfolio-page .portfolio-intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* Filters */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 15px 20px 40px;
+        }
+
+        .portfolio-filter {
+            padding: 12px 20px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 5px;
+            background: rgba(15, 15, 25, 0.7);
+            color: inherit;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: background 0.25s ease,
+                        border-color 0.25s ease,
+                        color 0.25s ease;
+        }
+
+        .portfolio-filter:hover,
+        .portfolio-filter.active {
+            background: #00f0ff;
+            border-color: #00f0ff;
+            color: #0a0a14;
+        }
+
+        .portfolio-filter:focus-visible,
+        .project-link:focus-visible {
+            outline: 2px solid #00f0ff;
+            outline-offset: 4px;
+        }
+
+        /* Project Grid */
+        .portfolio-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px 70px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            min-width: 0;
+            overflow: hidden;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(15, 15, 25, 0.75);
+            transition: transform 0.3s ease,
+                        border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #00f0ff;
+        }
+
+        .project-card[hidden] {
+            display: none !important;
+        }
+
+
+/* Project Cover — consistent sizing for every portfolio card */
+.project-cover {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #101321;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+/* Ensure every image fills the same size container */
+.project-cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+/* Keep hover effect consistent */
+.project-card:hover .project-cover img {
+    transform: scale(1.04);
+}
+
+/* Make existing placeholder wrappers fill the cover */
+.project-cover .cover-placeholder {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Keep graphic-design and social-content placeholders styled */
+.project-cover .cover-placeholder:has(.cover-label) {
+    padding: 25px;
+}
+
+/* Mobile and desktop images remain consistent */
+@media (max-width: 700px) {
+    .project-cover {
+        aspect-ratio: 16 / 10;
+    }
+}
+
+
+        .cover-label {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 2.1rem);
+            font-weight: 900;
+            line-height: 1.35;
+            overflow-wrap: anywhere;
+        }
+
+        .cover-subtitle {
+            position: relative;
+            z-index: 1;
+            margin-top: 12px;
+            color: rgba(255, 255, 255, 0.85);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .cover-index {
+            position: absolute;
+            z-index: 1;
+            bottom: 15px;
+            right: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+        }
+
+        /* Project Details */
+        .project-info {
+            padding: 28px;
+        }
+
+        .project-category {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: #00f0ff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .project-info h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            margin: 0 0 12px;
+        }
+
+        .project-info p {
+            margin: 0 0 20px;
+            line-height: 1.8;
+            opacity: 0.85;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 22px;
+        }
+
+        .project-tags span {
+            padding: 6px 10px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #00f0ff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
+        .portfolio-empty {
+            grid-column: 1 / -1;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        /* Closing CTA */
+        .portfolio-cta {
+            width: 100%;
+            margin: 20px 0 60px;
+            padding: 60px 20px;
+            text-align: center;
+            box-sizing: border-box;
+            background: rgba(10, 10, 20, 0.8);
+            border-top: 1px solid rgba(0, 240, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+        }
+
+        .portfolio-cta h2 {
+            font-family: 'Orbitron', sans-serif;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-cta p {
+            line-height: 1.8;
+        }
+
+        .portfolio-cta .full-width-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 700px;
+            margin: 25px auto 0;
+            padding: 18px 20px;
+            box-sizing: border-box;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        /* Light Mode */
+        body.light-mode .portfolio-page .project-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 130, 160, 0.25);
+        }
+
+        body.light-mode .portfolio-page .portfolio-filter {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        body.light-mode .portfolio-page .portfolio-filter:hover,
+        body.light-mode .portfolio-page .portfolio-filter.active {
+            background: #007e99;
+            color: #fff;
+            border-color: #007e99;
+        }
+
+        body.light-mode .portfolio-page .project-category,
+        body.light-mode .portfolio-page .project-link {
+            color: #007e99;
+        }
+
+        body.light-mode .portfolio-page .project-tags span {
+            border-color: rgba(0, 126, 153, 0.25);
+        }
+
+        body.light-mode .portfolio-cta {
+            background: rgba(225, 235, 245, 0.8);
+        }
+
+        @media (max-width: 700px) {
+            .portfolio-page .page-header {
+                padding: 120px 20px 40px;
+            }
+
+            .portfolio-page .page-header h1 {
+                font-size: clamp(1.7rem, 7vw, 2.5rem);
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                padding: 0 18px 50px;
+            }
+
+            .project-info {
+                padding: 23px;
+            }
+
+            .portfolio-filters {
+                gap: 8px;
+                padding-bottom: 30px;
+            }
+
+            .portfolio-filter {
+                padding: 10px 12px;
+                font-size: 0.67rem;
+            }
+
+            .portfolio-cta {
+                padding: 45px 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .project-card,
+            .project-cover img,
+            .portfolio-filter {
+                transition: none;
+            }
+        }
+
+/* Logos and business cards: show the entire image without cropping */
+.project-cover img.contain-image {
+    object-fit: contain;
+    object-position: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- Background Animation Layer -->
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+    <div class="scanlines"></div>
+    <div id="particles"></div>
+
+      <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-link">
+                <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                 
+                </svg>
+                <button id="themeToggle" class="theme-toggle" type="button">
+    <span id="themeIcon">☾</span>
+</button>
+            </a>
+     <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    
+    <li class="dropdown">
+        <a href="#features" class="nav-link dropdown-toggle">Services <span class="arrow">▾</span></a>
+        <ul class="dropdown-menu">
+            <li><a href="webdevelopmentservice.html" class="dropdown-item">Website Design & Development</a></li>
+             <li><a href="socialmediamanagement.html" class="dropdown-item">Social Media Management</a></li>
+             <li><a href="googlebusinessprofile.html" class="dropdown-item">Google Business Profile</a></li>
+             <li><a href="seo.html" class="dropdown-item">Search Engine Optimization</a></li>
+             <li><a href="brandgraphicdesign.html" class="dropdown-item">Branding & Graphic Design</a></li>
+           
+           
+        </ul>
+    </li>
+
+<li><a href="index.html#about" class="nav-link">About</a></li>
+<li><a href="pazey-portfolio.html" class="nav-link">Portfolio</a></li>
+<li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
+<li><a href="index.html#contact" class="nav-link">Contact</a></li>
+
+    <!-- Social Media Icons -->
+    <li class="social-icons">
+        <a href="https://www.instagram.com/pazey.coding?cplk=MXRjMmFpZzNqYncyaA%3D%3D&utm_source=qr"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.facebook.com/share/1HNNLjMgZ5/?mibextid=wwXIfr"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </li>
+</ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <main class="portfolio-page">
+
+     
+
+
+        </header>
+
+        <!-- Introduction -->
+        <section class="portfolio-intro">
+            <br><br><br>
+             
+            <h2 class="section-title">Creativity Meets Technology</h2>
+            <br><br>
+
+              <img src="pazey-coding-logo.PNG"
+             alt="Pazey Coding Logo"
+             style="width: 200px; height: 200px; display: block; margin: -100px auto 0; transform: translateY(-10px);">
+
+                    <p class="subtitle">
+               <p class="subtitle">
+From custom-coded websites to branding, graphic design, and digital content, every project starts with understanding the business behind it. Explore a selection of projects I've worked on to help businesses build their presence, communicate their value, and connect with their customers.
+
+            </p>
+        </section>
+
+        <!-- Filters -->
+        <div class="portfolio-filters" role="group" aria-label="Filter portfolio projects">
+            <button class="portfolio-filter active" type="button"
+                data-filter="all" aria-pressed="true">All Projects</button>
+
+            <button class="portfolio-filter" type="button"
+                data-filter="sweb" aria-pressed="false">Single Page Web Design</button>
+
+            <button class="portfolio-filter" type="button"
+                data-filter="mweb" aria-pressed="false">Multi Page Web Design</button>
+
+            <button class="portfolio-filter" type="button"
+                data-filter="social" aria-pressed="false">Brand, Graphics & Social Content</button>
+        </div>
+
+        <!-- Projects -->
+        <section class="portfolio-grid" aria-label="Portfolio projects">
+
+            <!-- Spotlight Home & Lifestyle -->
+            <article class="project-card" data-category="mweb">
+                <div class="project-cover cover-spotlight">
+                    <!-- Replace this cover with your project screenshot when available -->
+                    <div class="cover-placeholder">
+                       <img src="spotlight-portfolio.png" alt="Spotlight Home and Lifestyle Website">
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Website Design & Development</span>
+                    <h2>Spotlight Home & Lifestyle</h2>
+                    <p>
+                        A polished, project-focused website for a home renovation
+                        and design-build business, designed to showcase craftsmanship,
+                        communicate the client experience, and make exploring services simple.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Custom Website</span>
+                        <span>Responsive Design</span>
+                        <span>Multiple Pages</span>
+                    </div>
+
+                    <a class="project-link"
+                        href="https://spotlighthomeandlifestyle.com/"
+                        target="_blank" rel="noopener noreferrer">
+                        Explore Website <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Bromac Electric / Utility Ex -->
+            <article class="project-card" data-category="mweb">
+                <div class="project-cover cover-bromac">
+                    <div class="cover-placeholder">
+                       <img src="bromac-portfolio.png" alt="Bromac Electric & Utility Ex website screenshot">
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Website Design & Development</span>
+                    <h2>Bromac Electric & Utility Ex</h2>
+                    <p>
+                        A unified digital presence designed to bring two related
+                        businesses together, highlight their services, and give
+                        customers a straightforward way to connect with the team.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Custom Website</span>
+                        <span>Service Layout</span>
+                        <span>Mobile Design</span>
+                    </div>
+
+                    <a class="project-link" href="https://bromacelectric.ca/" target="_blank" rel="noopener noreferrer">
+                        Explore Website <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Derigay -->
+            <article class="project-card" data-category="mweb">
+                <div class="project-cover cover-derigay">
+                    <div class="cover-placeholder">
+                      <img src="derigay-portfolio.png" alt="Derigay Developments Website">
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Website Design & Development</span>
+                    <h2>Derigay Developments</h2>
+                    <p>A custom website designed to present Derigay Developments professionally, showcase their work, and make important business and project information easy for visitors to explore.</p>
+      
+
+                    <div class="project-tags">
+                        <span>Custom Code</span>
+                        <span>Service Layout</span>
+                        <span>Brand Styling</span>
+                    </div>
+
+                    <a class="project-link" href="https://derigay.com/" target="_blank" rel="noopener noreferrer">
+                        Explore Website <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </article>
+
+         
+
+                    
+                        <!-- Reliable Repairs -->
+            <article class="project-card" data-category="sweb">
+                <div class="project-cover cover-reliable">
+                    <div class="cover-placeholder">
+                      <img src="reliable-portfoli.png" alt="Reliable Repairs Website">
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Website Design & Development </span>
+                    <h2>Reliable Repairs</h2>
+                    <p>
+             Full website development supporting a local repair and maintenance business, helping customers explore services, find reliable repair solutions, and connect with Reliable Repairs online.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>SEO</span>
+                        <span>Website Content</span>
+                        <span>Search Visibility</span>
+                    </div>
+
+                    <a class="project-link"
+                        href="https://reliablerepairs.net/"
+                        target="_blank" rel="noopener noreferrer">
+                        Explore Website <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </article>
+
+                                   <!-- One Paw -->
+            <article class="project-card" data-category="mweb">
+                <div class="project-cover cover-onepaw">
+                    <div class="cover-placeholder">
+                      <img src="onepaw-portfolio.png" alt="One Paw Website">
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Website Design & Development </span>
+                    <h2>One Paw At A Time: Dog Trainer</h2>
+                    <p>
+               Full website development supporting a professional dog training business, helping pet owners explore training services, learn about available programs, and connect with One Paw Dog Trainer online.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>SEO</span>
+                        <span>Website Content</span>
+                        <span>Search Visibility</span>
+                    </div>
+
+                    <a class="project-link"
+                        href="https://onepawdogtrainer.com/"
+                        target="_blank" rel="noopener noreferrer">
+                        Explore Website <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </article>
+
+            
+                                 <!-- 10/6 Barber & Beauty -->
+<article class="project-card" data-category="sweb">
+    <div class="project-cover cover-onepaw">
+        <div class="cover-placeholder">
+            <img src="106barber-portfolio.png" alt="10/6 Barber & Beauty website">
+        </div>
+    </div>
+
+    <div class="project-info">
+        <span class="project-category">Website Design & Development</span>
+        <h2>10/6 Barber & Beauty</h2>
+      <p> Full website development for a barber and beauty studio, designed to showcase services, introduce the business, and make booking an appointment convenient for clients.</p>
+     
+
+        <div class="project-tags">
+            <span>Custom Website</span>
+            <span>Service Showcase</span>
+            <span>Online Booking</span>
+        </div>
+
+        <a class="project-link"
+            href="https://106barber.ca/"
+            target="_blank" rel="noopener noreferrer">
+            Explore Website <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</article>
+
+            
+                                   <!-- Aquaholic -->
+            <article class="project-card" data-category="mweb">
+                <div class="project-cover cover-aquaholic">
+                    <div class="cover-placeholder">
+                      <img src="aquaholic-portfolio.png" alt="Aquaholic Website">
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Website Design & Development </span>
+                    <h2>Aquaholic Pool & Spa Services</h2>
+                    <p>
+              Full website development supporting a pool services business, helping homeowners explore pool care options, discover available services, and connect with Aquaholic Pool Services online.
+                    </p>
+                    <div class="project-tags">
+                        <span>SEO</span>
+                        <span>Website Content</span>
+                        <span>Search Visibility</span>
+                    </div>
+
+              
+                    <a class="project-link"
+                        href="https://aquaholicpoolservices.com/"
+                        target="_blank" rel="noopener noreferrer">
+                        Explore Website <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </article>
+
+               <!-- Smallville -->
+            <article class="project-card" data-category="sweb">
+      
+<div class="project-cover cover-smallville">
+    <img src="smallville-portfolio.png"
+         alt="Smallville Eats website screenshot">
+</div>
+
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Website Design & Development </span>
+
+                    <h2>Smallville Eats</h2>
+                    
+                    <p>
+                  Full website development supporting a local food truck business, helping customers explore menu offerings, pricing , and upcoming events online.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>SEO</span>
+                        <span>Website Content</span>
+                        <span>Search Visibility</span>
+                    </div>
+
+                    <a class="project-link"
+                        href="https://smallvilleeats.ca/"
+                        target="_blank" rel="noopener noreferrer">
+                        Explore Website <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </article>
+
+                        <!-- Capital Car Buyer -->
+            <article class="project-card" data-category="sweb">
+                <div class="project-cover cover-capital">
+                    <div class="cover-placeholder">
+                      <img src="capital-portfolio.png" alt="Capital Car Buyer Website">
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Website Design & Development </span>
+                    <h2>Capital Car Buyer</h2>
+                    <p>
+                 Full website development supporting a vehicle buying business for businesses, helping customers and dealerships explore services, understand the car-selling process, and connect with Capital Car Buyers online.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>SEO</span>
+                        <span>Website Content</span>
+                        <span>Search Visibility</span>
+                    </div>
+
+                    <a class="project-link"
+                        href="https://capitalcarbuyer.com/"
+                        target="_blank" rel="noopener noreferrer">
+                        Explore Website <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </article>
+
+     
+
+                                              <!-- Scrubs & Stuff -->
+            <article class="project-card" data-category="mweb">
+                <div class="project-cover cover-scrubs">
+                    <div class="cover-placeholder">
+                      <img src="scrubs-portfolio.png" alt="Scrubs & Stuff Website">
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Website Design & Development </span>
+                    <h2>Scrubs & Stuff</h2>
+                    <p>
+                 Full website development supporting a healthcare apparel business, helping customers explore products, discover scrub styles, and connect with Scrubs N Stuff online.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>SEO</span>
+                        <span>Website Content</span>
+                        <span>Search Visibility</span>
+                    </div>
+
+                    <a class="project-link"
+                        href="https://scrubsnstuff.ca/"
+                        target="_blank" rel="noopener noreferrer">
+                        Explore Website <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </article>
+
+                                                        
+<!-- Ginger's Carpentry -->
+<article class="project-card" data-category="mweb">
+
+<div class="project-cover cover-gingers">
+    <img src="gingers-portfolio.png"
+         alt="Gingers Carpentry website screenshot">
+</div>
+
+
+    <div class="project-info">
+        <span class="project-category">Website Design & Development</span>
+
+        <h2>Gingers Carpentry</h2>
+
+        <p>
+            Full website development supporting a carpentry
+            business, helping homeowners explore services, discover custom
+            woodworking and renovation solutions, and connect with
+            Gingers Carpentry online.
+        </p>
+
+     <div class="project-tags">
+    <span>Custom Website</span>
+    <span>Carpentry Services</span>
+    <span>Responsive Design</span>
+</div>
+
+        <a class="project-link"
+           href="https://gingerscarpentry.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+            Explore Website <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</article>
+
+<!-- Tasia Hills OES -->
+<article class="project-card" data-category="mweb">
+
+    <div class="project-cover cover-tasiahills">
+        <img src="tasiahills-portfolio.png"
+             alt="Tasia Hills OES website screenshot">
+    </div>
+
+    <div class="project-info">
+        <span class="project-category">Website Design & Development</span>
+
+        <h2>Tasia Hills OES</h2>
+
+        <p>
+             Full website development supporting Tasia Hills OES,
+            creating an online presence to showcase the business, highlight
+            its offerings, and help visitors find information and connect
+            online.
+        </p>
+
+        <div class="project-tags">
+            <span>Custom Website</span>
+            <span>Brand Presentation</span>
+            <span>Responsive Design</span>
+        </div>
+
+        <a class="project-link"
+           href="https://tasiahillsoes.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+            Explore Website <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</article>
+
+
+
+            
+
+            <!-- Social Media Content -->
+            <article class="project-card" data-category="social">
+                <div class="project-cover cover-misscharles">
+    <img src="misscharles-logo.png"
+         alt="Miss Charles Logo" class="contain-image" loading="lazy">
+</div>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Logo</span>
+                    <h2>Miss Charles Chews</h2>
+               
+
+                
+                </div>
+            </article>
+
+
+                          <article class="project-card" data-category="social">
+                <div class="project-cover cover-misscharles">
+    <img src="event-flyer-onepaw.png"
+         alt="One Paw Flyer" class="contain-image" loading="lazy">
+</div>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Event Flyer</span>
+                    <h2>One Paw At A Time</h2>
+               
+
+                
+                </div>
+            </article>
+
+                           <article class="project-card" data-category="social">
+                <div class="project-cover cover-misscharles">
+    <img src="onepawlogo.jpg"
+         alt="One Paw Logo" class="contain-image" loading="lazy">
+</div>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Logo</span>
+                    <h2>One Paw At A Time</h2>
+               
+
+                
+                </div>
+            </article>
+
+                          <article class="project-card" data-category="social">
+                <div class="project-cover cover-misscharles">
+    <img src="spotlight-sc.PNG"
+         alt="Spotlight Home Social Content" class="contain-image" loading="lazy">
+</div>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Social Content</span>
+                    <h2>Spotlight Home and Lifestyle</h2>
+                <a class="project-link"
+           href="https://www.facebook.com/spotlighthomeandlifestyle"
+           target="_blank"
+           rel="noopener noreferrer">
+            Explore Content <span aria-hidden="true">→</span>
+        </a>
+
+                
+                </div>
+            </article>
+
+            
+         
+<!-- 10/6 Barber & Beauty Logo -->
+<article class="project-card" data-category="social">
+    <div class="project-cover cover-misscharles logo-cover">
+        <img src="106-logo.PNG" alt="10/6 Barber & Beauty Logo" class="contain-image" loading="lazy">
+    </div>
+
+    <div class="project-info">
+        <span class="project-category">Logo</span>
+        <h2>10/6 Barber & Beauty</h2>
+    </div>
+</article>
+
+<!-- Ginger's Carpentry Business Card -->
+<article class="project-card" data-category="social">
+    <div class="project-cover cover-misscharles business-card-cover">
+        <img src="gingers-bc.PNG" alt="Ginger's Carpentry Business Card" class="contain-image" loading="lazy">
+    </div>
+
+    <div class="project-info">
+        <span class="project-category">Business Card</span>
+        <h2>Ginger's Carpentry</h2>
+    </div>
+</article>
+
+
+
+            
+                    <article class="project-card" data-category="social">
+                <div class="project-cover cover-misscharles">
+    <img src="cleaning-b.png"
+         alt="Aura Luxe Brochure" class="contain-image" loading="lazy">
+</div>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">Brochure</span>
+                    <h2>Aura Luxe Cleaning</h2>
+               
+
+                
+                </div>
+            </article>
+
+
+        </section>
+
+        <!-- Call to Action -->
+        <section class="portfolio-cta">
+            <h2 class="section-title">
+                Your Business Could Be <span class="accent-text">Next.</span>
+            </h2>
+
+            <p class="subtitle">
+            Every business has a different vision, and the right digital approach should reflect that.
+
+Whether you're looking for a custom website, stronger search visibility, or creative support for your brand, let's talk about what you have in mind.
+            </p>
+
+            <a href="index.html#contact"
+                class="cta-button cta-primary">
+                Let's Build Something <span style="margin-left: 10px;">→</span>
+            </a>
+        </section>
+
+    </main>
+    <!-- Footer -->
+    <footer class="site-footer" id="footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <a href="index.html#home" class="footer-logo">
+                    <img src="pazey-coding-logo.PNG"
+                         alt="Pazey Coding & Development Logo">
+                </a>
+
+                <h3>PAZEY CODING <span>& DEVELOPMENT</span></h3>
+
+                <p>
+                    Creativity Meets Technology.
+                    Custom websites, digital design, and technology
+                    solutions built around your business.
+                </p>
+
+                <a href="index.html#contact" class="footer-cta">
+                    Let's Work Together <span>→</span>
+                </a>
+            </div>
+   <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html#about">About Pazey</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="pazey-portfolio.html">Portfolio</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-column">
+                <h4>Digital Solutions</h4>
+                <ul>
+                    <li><a href="webdevelopmentservice.html">Website Design & Development</a></li>
+                    <li><a href="socialmediamanagement.html">Social Media Management</a></li>
+                    <li><a href="googlebusinessprofile.html">Google Business Profile</a></li>
+                    <li><a href="seo.html">SEO Services</a></li>
+                    <li><a href="brandgraphicdesign.html">Branding & Graphic Design</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-connect">
+                <h4>Connect</h4>
+
+                <p>Have a project in mind or need a little tech help?</p>
+
+                <a href="mailto:pazeycoding@gmail.com" class="footer-contact-link">
+                    <span>✉</span> pazeycoding@gmail.com
+                </a>
+
+                <a href="tel:+16479669694" class="footer-contact-link">
+                    <span>☎</span> 647-966-9694
+                </a>
+
+                <div class="footer-socials">
+                    <!-- Replace these placeholders with your real profile URLs. -->
+                    <a href="https://www.facebook.com/share/1HNNLjMgZ5/?mibextid=wwXIfr"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/pazey.coding?cplk=MXRjMmFpZzNqYncyaA%3D%3D&utm_source=qr"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">
+                © <span id="footerYear"></span> Pazey Coding & Development.
+                All rights reserved.
+            </p>
+
+
+            <a href="#home" class="back-to-top">Back to Top ↑</a>
+        </div>
+    </footer>
+
+    <!-- Existing Site Scripts -->
+    <script src="pazeycoding.js"></script>
+
+    <!-- Theme Toggle -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const button = document.getElementById("themeToggle");
+            const icon = document.getElementById("themeIcon");
+
+            if (!button || !icon) return;
+
+            function applyTheme(theme) {
+                const light = theme === "light";
+
+                document.body.classList.toggle("light-mode", light);
+                icon.textContent = light ? "☀" : "☾";
+                button.setAttribute(
+                    "aria-label",
+                    light ? "Switch to dark mode" : "Switch to light mode"
+                );
+            }
+
+            let savedTheme = "dark";
+
+            try {
+                savedTheme = localStorage.getItem("theme") || "dark";
+            } catch (error) {}
+
+            applyTheme(savedTheme);
+
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                const nextTheme =
+                    document.body.classList.contains("light-mode")
+                        ? "dark"
+                        : "light";
+
+                applyTheme(nextTheme);
+
+                try {
+                    localStorage.setItem("theme", nextTheme);
+                } catch (error) {}
+            });
+        });
+    </script>
+
+    <!-- Portfolio Category Filters -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const filters = document.querySelectorAll(".portfolio-filter");
+            const projects = document.querySelectorAll(".project-card");
+            const emptyMessage = document.querySelector(".portfolio-empty");
+
+            filters.forEach(function (filter) {
+                filter.addEventListener("click", function () {
+                    const category = filter.dataset.filter;
+                    let visibleCount = 0;
+
+                    filters.forEach(function (button) {
+                        const active = button === filter;
+
+                        button.classList.toggle("active", active);
+                        button.setAttribute("aria-pressed", String(active));
+                    });
+
+                    projects.forEach(function (project) {
+                        const matches =
+                            category === "all" ||
+                            project.dataset.category === category;
+
+                        project.hidden = !matches;
+
+                        if (matches) visibleCount++;
+                    });
+
+                    if (emptyMessage) {
+                        emptyMessage.hidden = visibleCount !== 0;
+                    }
+                });
+            });
+        });
+    </script>
+
+<!-- Mobile Navigation Fix -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (!menuToggle || !navLinks) return;
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+
+        const isOpen = navLinks.classList.contains("active");
+        menuToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    // Close menu when a navigation link is clicked
+    navLinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            // Allow dropdown toggles to be handled separately
+            if (link.classList.contains("dropdown-toggle")) return;
+
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+});
+</script>
+</body>
+</html>
+

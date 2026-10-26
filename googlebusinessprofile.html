@@ -1,0 +1,862 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<meta name="description" content="Get Google Business Profile setup and management by Pazey Coding & Development. Improve local SEO, update business information, manage reviews, and boost local visibility.">
+
+<meta name="keywords" content="Google Business Profile setup, Google Business Profile management, Google Business Profile optimization, local SEO services, Google business listing, review management, Google profile verification">
+
+<meta name="robots" content="index, follow">
+
+<title>Google Business Profile Setup & Management | Pazey Coding</title>
+
+<link rel="canonical" href="https://www.pazeycoding.com/googlebusinessprofile.html">
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Google Business Profile Setup & Management | Pazey Coding">
+<meta property="og:description" content="Improve your local visibility with Google Business Profile setup, optimization, review management, and ongoing support.">
+<meta property="og:url" content="https://www.pazeycoding.com/googlebusinessprofile.html">
+<meta property="og:site_name" content="Pazey Coding & Development">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link href="pazey.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* Page Layout */
+
+        .page-header {
+            padding: 140px 20px 60px;
+            text-align: center;
+        }
+
+        .page-header .subtitle {
+            max-width: 750px;
+            margin: 20px auto 0;
+            line-height: 1.8;
+        }
+
+        .service-details {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 20px 40px;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            margin: 0 auto 35px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* Benefits */
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .benefit-card {
+            background: rgba(15, 15, 25, 0.377);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: #566DF6;
+        }
+
+        .benefit-card .benefit-icon {
+            font-size: 1.8rem;
+            color: #8b7cf6;
+            margin-bottom: 18px;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00f0ff;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            line-height: 1.7;
+        }
+
+        /* Pricing Packages */
+
+        .packages-section {
+            max-width: 1100px;
+            margin: 35px auto 0;
+            padding: 40px 20px;
+        }
+
+        .packages-intro {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .package-card {
+            display: flex;
+            flex-direction: column;
+            background: rgba(15, 15, 25, 0.377);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease, border-color 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            border-color: #566DF6;
+            box-shadow: 0 8px 30px rgba(0, 240, 255, 0.08);
+        }
+
+        .package-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00F0FF;
+            font-size: 1.15rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .package-price {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 8px 0 20px;
+        }
+
+        .price-period {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .package-description {
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .package-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px;
+        }
+
+        .package-features li {
+            position: relative;
+            padding: 0 0 13px 25px;
+            line-height: 1.65;
+            font-weight: 500;
+        }
+
+        .package-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #566DF6;
+            font-weight: bold;
+        }
+
+        .package-cta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: auto;
+            padding: 14px 16px;
+            border: 1px solid #566DF6;
+            border-radius: 5px;
+            color: #566DF6;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .package-cta:hover {
+            background: #566DF6;
+            color: #0a0a14;
+        }
+
+        .package-note {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            line-height: 1.7;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .contract-note {
+            border: 1px solid rgba(86, 109, 246, 0.45);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 0 0 22px;
+            line-height: 1.7;
+            background: rgba(86, 109, 246, 0.07);
+        }
+
+        /* Process */
+
+        .process-section {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 22px;
+            background: rgba(15, 15, 25, 0.4);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #8b7cf6;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: #00B2FF;
+            font-weight: bold;
+        }
+
+        .process-step h3 {
+            margin-bottom: 8px;
+        }
+
+        .process-step p {
+            line-height: 1.7;
+        }
+
+        /* FAQ */
+
+        .faq-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .faq-item {
+            padding: 22px 0;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .faq-item h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #566DF6;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            line-height: 1.8;
+        }
+
+        /* CTA Banner */
+
+        .full-width-cta-container {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 60px 20px;
+            background: rgba(10, 10, 20, 0.8);
+            border-top: 1px solid rgba(0, 240, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .full-width-cta-container p {
+            max-width: 700px;
+            margin: 15px auto;
+            line-height: 1.8;
+        }
+
+        .full-width-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 650px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 18px 20px;
+            margin: 25px auto 0;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border: 1px solid #566DF6;
+            border-radius: 5px;
+            color: #566DF6;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .full-width-btn:hover {
+            background: #566DF6;
+            color: #0a0a14;
+        }
+
+        @media (max-width: 600px) {
+            .page-header {
+                padding: 115px 18px 40px;
+            }
+
+            .packages-section {
+                padding: 25px 18px;
+            }
+
+            .package-card {
+                padding: 25px 20px;
+            }
+
+            .package-price {
+                font-size: 1.7rem;
+            }
+
+            .process-step {
+                gap: 14px;
+                padding: 20px 16px;
+            }
+
+            .step-num {
+                font-size: 1.4rem;
+            }
+
+            .benefit-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Animation -->
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+    <div class="scanlines"></div>
+    <div id="particles"></div>
+
+   <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-link">
+                <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                 
+                </svg>
+                <button id="themeToggle" class="theme-toggle" type="button">
+    <span id="themeIcon">☾</span>
+</button>
+            </a>
+     <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    
+    <li class="dropdown">
+        <a href="#features" class="nav-link dropdown-toggle">Services <span class="arrow">▾</span></a>
+        <ul class="dropdown-menu">
+            <li><a href="webdevelopmentservice.html" class="dropdown-item">Website Design & Development</a></li>
+             <li><a href="socialmedialmanagement.html" class="dropdown-item">Social Media Management</a></li>
+             <li><a href="googlebusinessprofile.html" class="dropdown-item">Google Business Profile</a></li>
+             <li><a href="seo.html" class="dropdown-item">Search Engine Optimization</a></li>
+             <li><a href="brandgraphicdesign.html" class="dropdown-item">Branding & Graphic Design</a></li>
+           
+           
+        </ul>
+    </li>
+
+<li><a href="index.html#about" class="nav-link">About</a></li>
+<li><a href="pazey-portfolio.html" class="nav-link">Portfolio</a></li>
+<li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
+<li><a href="index.html#contact" class="nav-link">Contact</a></li>
+
+    <!-- Social Media Icons -->
+    <li class="social-icons">
+        <a href="https://www.instagram.com/pazey.coding?cplk=MXRjMmFpZzNqYncyaA%3D%3D&utm_source=qr"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.facebook.com/share/1HNNLjMgZ5/?mibextid=wwXIfr"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </li>
+</ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Page Header -->
+    <header class="page-header" id="home">
+
+        <h1 class="glitch-text">GOOGLE BUSINESS PROFILE</h1>
+
+        <p class="subtitle">
+            Get found locally. Build trust. Stay connected with your customers.
+        </p>
+
+    </header>
+
+    <main>
+
+        <!-- Benefits -->
+        <section class="service-details" aria-labelledby="benefits-title">
+
+            <p class="section-intro">
+                Your Google Business Profile helps customers discover your
+                business when searching for relevant services. A complete,
+                accurate profile makes it easier for potential customers to
+                learn about your business, explore your services, and get in touch.
+            </p>
+
+            <div class="benefits-grid">
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    </div>
+                    <h3>Local Visibility</h3>
+                    <p>
+                        Improve your profile information to help Google
+                        understand your business, services, and service area.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-id-card" aria-hidden="true"></i>
+                    </div>
+                    <h3>Complete Business Information</h3>
+                    <p>
+                        Present accurate business details, hours, contact
+                        information, services, and website links.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                    </div>
+                    <h3>Customer Engagement</h3>
+                    <p>
+                        Keep customers informed with profile updates and
+                        professional responses to customer reviews.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Pricing Packages -->
+        <section class="packages-section" id="packages">
+
+            <h2 class="section-title">Google Business Profile Packages</h2>
+
+        
+
+            <div class="packages-grid">
+
+                <!-- One-Time Setup -->
+                <article class="package-card">
+
+                    <h3>Google Business Profile Setup</h3>
+
+                    <p class="package-price">
+                        $100
+                        <span class="price-period">/ One-Time</span>
+                    </p>
+
+                    <p class="package-description">
+                        Get your Google Business Profile set up with the
+                        essential information customers need to find and
+                        contact your business.
+                    </p>
+
+                    <ul class="package-features">
+
+                        <li>
+                            <strong>Business Information Setup</strong> —
+                            Add your business name, phone number, website,
+                            business hours, and service area where applicable.
+                        </li>
+
+                        <li>
+                            <strong>Verification Assistance</strong> —
+                            Guidance through Google's verification process
+                            if verification is required.
+                        </li>
+
+                        <li>
+                            <strong>Business Description</strong> —
+                            Write a clear, professional description explaining
+                            your business and the services you offer.
+                        </li>
+
+                        <li>
+                            <strong>Services & Products</strong> —
+                            Add relevant service or product listings where
+                            applicable and supported.
+                        </li>
+
+                        <li>
+                            <strong>Photos & Logo</strong> —
+                            Upload client-provided business photos and branding.
+                        </li>
+
+                        <li>
+                            <strong>Website & Contact Links</strong> —
+                            Connect your website and relevant contact links
+                            where supported.
+                        </li>
+
+                        <li>
+                            <strong>Local SEO Optimization</strong> —
+                            Optimize available profile information to help
+                            Google understand your business and service area.
+                        </li>
+
+                    </ul>
+
+                    <p class="package-note">
+                        Additional changes or revisions requested after the
+                        initial setup is completed are billed at the standard
+                        hourly rate.
+                    </p>
+
+                    <a href="index.html#contact" class="package-cta">
+                        Set Up My Profile →
+                    </a>
+
+                </article>
+
+                <!-- Monthly Management (add contract-note if app) -->
+
+                <article class="package-card">
+
+                    <h3>Google Business Profile Management</h3>
+
+                    <p class="package-price">
+                        $100
+                        <span class="price-period">/ Month</span>
+                    </p>
+
+                    <p class="package-description">
+                        Keep your Google Business Profile accurate, active,
+                        and optimized with ongoing management and local SEO
+                        support.
+                    </p>
+
+                    <ul class="package-features">
+
+                        <li>
+                            <strong>Initial Setup & Verification Assistance</strong> —
+                            Set up your profile and provide guidance through
+                            Google's verification process if required.
+                        </li>
+
+                        <li>
+                            <strong>Business Information Updates</strong> —
+                            Keep business hours, contact details, services,
+                            and other profile information current.
+                        </li>
+                           <li>
+                        <strong>Monthly Insights Report</strong> —
+Review your Google Business Profile insights to track visibility, customer interactions, and overall performance.
+
+                        <li>
+                            <strong>Profile Posts & Updates</strong> —
+                            Publish relevant business updates to help keep
+                            customers informed.
+                        </li>
+
+                        <li>
+                            <strong>Local SEO Optimization</strong> —
+                            Refine available profile information to support
+                            local search relevance and discoverability.
+                        </li>
+
+                        <li>
+                            <strong>Customer Review Responses</strong> —
+                            Respond professionally to customer reviews to
+                            support engagement and online reputation.
+                        </li>
+
+                        <li>
+                            <strong>Spam Monitoring & Reporting</strong> —
+                            Monitor for suspicious or misleading profile
+                            activity and report potential spam or policy
+                            violations to Google where appropriate.
+                        </li>
+
+                    </ul>
+
+                    <a href="index.html#contact" class="package-cta">
+                        Manage My Profile →
+                    </a>
+
+                </article>
+
+            </div>
+
+        
+
+        </section>
+
+        <!-- Process -->
+        <section class="process-section" id="process">
+
+            <h2 class="section-title">From Setup to Visibility</h2>
+
+            <p class="section-intro">
+                A straightforward process to help get your business
+                profile ready and keep it maintained.
+            </p>
+
+            <div class="process-step">
+                <div class="step-num">01</div>
+                <div>
+                    <h3>Discovery & Business Information</h3>
+                    <p>
+We gather the essential details for your profile, including business information, contact details, service areas, hours, and branding. If this information is already available on your social media accounts, we can use it to simplify the process.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-num">02</div>
+                <div>
+                    <h3>Setup & Optimization</h3>
+                    <p>
+                        Your profile information is entered and optimized
+                        based on your business and the services you provide.
+                        If Google requires verification, I'll guide you
+                        through the available process.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-num">03</div>
+                <div>
+                    <h3>Ongoing Management</h3>
+                    <p>
+                        With the monthly plan, your profile receives ongoing
+                        information updates, local SEO support, review
+                        responses, and spam monitoring throughout your
+                        management commitment.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        
+
+       
+
+    </main>
+
+       <!-- Footer -->
+    <footer class="site-footer" id="footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <a href="index.html#home" class="footer-logo">
+                    <img src="pazey-coding-logo.PNG"
+                         alt="Pazey Coding & Development Logo">
+                </a>
+
+                <h3>PAZEY CODING <span>& DEVELOPMENT</span></h3>
+
+                <p>
+                    Creativity Meets Technology.
+                    Custom websites, digital design, and technology
+                    solutions built around your business.
+                </p>
+
+                <a href="index.html#contact" class="footer-cta">
+                    Let's Work Together <span>→</span>
+                </a>
+            </div>
+
+         <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html#about">About Pazey</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="pazey-portfolio.html">Portfolio</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-column">
+                <h4>Digital Solutions</h4>
+                <ul>
+                    <li><a href="webdevelopmentservice.html">Website Design & Development</a></li>
+                    <li><a href="socialmediamanagement.html">Social Media Management</a></li>
+                    <li><a href="seogooglebusinessprofile.html">Google Business Profile</a></li>
+                    <li><a href="seoservices.html">SEO Services</a></li>
+                    <li><a href="brandgraphicdesign.html">Branding & Graphic Design</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-connect">
+                <h4>Connect</h4>
+
+                <p>Have a project in mind or need a little tech help?</p>
+
+                <a href="mailto:pazeycoding@gmail.com" class="footer-contact-link">
+                    <span>✉</span> pazeycoding@gmail.com
+                </a>
+
+                <a href="tel:+16479669694" class="footer-contact-link">
+                    <span>☎</span> 647-966-9694
+                </a>
+
+                <div class="footer-socials">
+                    <!-- Replace these placeholders with your real profile URLs. -->
+                    <a href="https://www.facebook.com/share/1HNNLjMgZ5/?mibextid=wwXIfr"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/pazey.coding?cplk=MXRjMmFpZzNqYncyaA%3D%3D&utm_source=qr"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">
+                © <span id="footerYear"></span> Pazey Coding & Development.
+                All rights reserved.
+            </p>
+
+
+            <a href="#home" class="back-to-top">Back to Top ↑</a>
+        </div>
+    </footer>
+
+    <!-- Footer Year -->
+    <script>
+        document.getElementById("footerYear").textContent =
+            new Date().getFullYear();
+    </script>
+
+    <!-- Existing Site Scripts -->
+    <script src="pazeycoding.js"></script>
+
+    <!-- Theme Toggle -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const button = document.getElementById("themeToggle");
+            const icon = document.getElementById("themeIcon");
+
+            if (!button || !icon) return;
+
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                document.body.classList.toggle("light-mode");
+
+                const isLight =
+                    document.body.classList.contains("light-mode");
+
+                icon.textContent = isLight ? "☀" : "☾";
+
+                localStorage.setItem(
+                    "theme",
+                    isLight ? "light" : "dark"
+                );
+            });
+
+            if (localStorage.getItem("theme") === "light") {
+                document.body.classList.add("light-mode");
+                icon.textContent = "☀";
+            }
+        });
+    </script>
+
+<!-- Mobile Navigation Fix -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (!menuToggle || !navLinks) return;
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+
+        const isOpen = navLinks.classList.contains("active");
+        menuToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    // Close menu when a navigation link is clicked
+    navLinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            // Allow dropdown toggles to be handled separately
+            if (link.classList.contains("dropdown-toggle")) return;
+
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+});
+</script>
+
+
+</body>
+</html>
