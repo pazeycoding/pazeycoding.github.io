@@ -882,80 +882,78 @@
             new Date().getFullYear();
     </script>
 
-    <!-- Existing Site Scripts -->
-    <script src="pazeycoding.js"></script>
-
-    <!-- Theme Toggle -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const button = document.getElementById("themeToggle");
-            const icon = document.getElementById("themeIcon");
-
-            if (!button || !icon) return;
-
-            function updateThemeIcon() {
-                const isLight =
-                    document.body.classList.contains("light-mode");
-
-                icon.textContent = isLight ? "☀" : "☾";
-                button.setAttribute(
-                    "aria-label",
-                    isLight ? "Switch to dark theme" : "Switch to light theme"
-                );
-            }
-
-            if (localStorage.getItem("theme") === "light") {
-                document.body.classList.add("light-mode");
-            }
-
-            updateThemeIcon();
-
-            button.addEventListener("click", function () {
-                document.body.classList.toggle("light-mode");
-
-                const isLight =
-                    document.body.classList.contains("light-mode");
-
-                localStorage.setItem(
-                    "theme",
-                    isLight ? "light" : "dark"
-                );
-
-                updateThemeIcon();
-            });
-        });
-    </script>
+  
+     <script src="pazeycoding.js"></script>
 
 
-<!-- Mobile Navigation Fix -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // toggle code
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const button = document.getElementById("themeToggle");
+    const icon = document.getElementById("themeIcon");
+
+    if (!button) return;
+
+    button.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        document.body.classList.toggle("light-mode");
+
+        if (document.body.classList.contains("light-mode")) {
+            icon.textContent = "☀";
+            localStorage.setItem("theme", "light");
+        } else {
+            icon.textContent = "☾";
+            localStorage.setItem("theme", "dark");
+        }
+    });
+
+    /* Remember selected mode */
+    if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-mode");
+        icon.textContent = "☀";
+    }
+
+});
+</script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
+    const dropdown = document.querySelector("#navLinks .dropdown");
+    const servicesToggle = dropdown?.querySelector(".dropdown-toggle");
 
-    if (!menuToggle || !navLinks) return;
+    if (!dropdown || !servicesToggle) return;
 
-    menuToggle.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-        menuToggle.classList.toggle("active");
+    servicesToggle.addEventListener("click", function (event) {
+        if (window.innerWidth <= 768) {
+            event.preventDefault();
+            event.stopPropagation();
 
-        const isOpen = navLinks.classList.contains("active");
-        menuToggle.setAttribute("aria-expanded", isOpen);
+            dropdown.classList.toggle("active");
+        }
     });
 
-    // Close menu when a navigation link is clicked
-    navLinks.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            // Allow dropdown toggles to be handled separately
-            if (link.classList.contains("dropdown-toggle")) return;
+    // Prevent taps inside the dropdown from closing the main menu
+    dropdown.querySelector(".dropdown-menu")?.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
 
-            navLinks.classList.remove("active");
-            menuToggle.classList.remove("active");
-            menuToggle.setAttribute("aria-expanded", "false");
+    // Close the dropdown after choosing a service
+    dropdown.querySelectorAll(".dropdown-menu a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            dropdown.classList.remove("active");
         });
     });
 });
 </script>
+
 </body>
 </html>
-
