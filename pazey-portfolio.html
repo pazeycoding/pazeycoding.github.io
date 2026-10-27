@@ -428,7 +428,7 @@
     <div class="scanlines"></div>
     <div id="particles"></div>
 
-      <!-- Navigation -->
+<!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo-link">
@@ -444,7 +444,7 @@
     <li><a href="index.html" class="nav-link">Home</a></li>
     
     <li class="dropdown">
-        <a href="#features" class="nav-link dropdown-toggle">Services <span class="arrow">▾</span></a>
+        <a href="#services" class="nav-link dropdown-toggle">Services <span class="arrow">▾</span></a>
         <ul class="dropdown-menu">
             <li><a href="webdevelopmentservice.html" class="dropdown-item">Website Design & Development</a></li>
              <li><a href="socialmediamanagement.html" class="dropdown-item">Social Media Management</a></li>
@@ -456,10 +456,10 @@
         </ul>
     </li>
 
-<li><a href="index.html#about" class="nav-link">About</a></li>
-<li><a href="pazey-portfolio.html" class="nav-link">Portfolio</a></li>
-<li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
-<li><a href="index.html#contact" class="nav-link">Contact</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="pazey-portfolio.html" class="nav-link">Portfolio</a></li>
+    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+       <li><a href="#contact" class="nav-link">Contact</a></li>
 
     <!-- Social Media Icons -->
     <li class="social-icons">
@@ -485,6 +485,7 @@
             </div>
         </div>
     </nav>
+
     <main class="portfolio-page">
 
      
@@ -1135,7 +1136,8 @@ Whether you're looking for a custom website, stronger search visibility, or crea
         </div>
     </footer>
 
-     <script src="pazeycoding.js"></script>
+    
+    <script src="pazeycoding.js"></script>
 
 
 <script>
@@ -1260,9 +1262,37 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const dropdown = document.querySelector("#navLinks .dropdown");
+    const servicesToggle = dropdown?.querySelector(".dropdown-toggle");
 
+    if (!dropdown || !servicesToggle) return;
+
+    servicesToggle.addEventListener("click", function (event) {
+        if (window.innerWidth <= 768) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            dropdown.classList.toggle("active");
+        }
+    });
+
+    // Prevent taps inside the dropdown from closing the main menu
+    dropdown.querySelector(".dropdown-menu")?.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+
+    // Close the dropdown after choosing a service
+    dropdown.querySelectorAll(".dropdown-menu a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            dropdown.classList.remove("active");
+        });
+    });
+});
 
 </script>
 </body>
 </html>
-
