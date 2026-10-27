@@ -310,7 +310,8 @@
     <div class="scanlines"></div>
     <div id="particles"></div>
 
-       <!-- Navigation -->
+ 
+<!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo-link">
@@ -326,7 +327,7 @@
     <li><a href="index.html" class="nav-link">Home</a></li>
     
     <li class="dropdown">
-        <a href="#features" class="nav-link dropdown-toggle">Services <span class="arrow">▾</span></a>
+        <a href="#services" class="nav-link dropdown-toggle">Services <span class="arrow">▾</span></a>
         <ul class="dropdown-menu">
             <li><a href="webdevelopmentservice.html" class="dropdown-item">Website Design & Development</a></li>
              <li><a href="socialmediamanagement.html" class="dropdown-item">Social Media Management</a></li>
@@ -337,10 +338,11 @@
            
         </ul>
     </li>
-<li><a href="index.html#about" class="nav-link">About</a></li>
-<li><a href="pazey-portfolio.html" class="nav-link">Portfolio</a></li>
-<li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
-<li><a href="index.html#contact" class="nav-link">Contact</a></li>
+
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="pazey-portfolio.html" class="nav-link">Portfolio</a></li>
+    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+       <li><a href="#contact" class="nav-link">Contact</a></li>
 
     <!-- Social Media Icons -->
     <li class="social-icons">
@@ -366,6 +368,7 @@
             </div>
         </div>
     </nav>
+
     <!-- Header Section -->
     <header class="page-header">
         <h1 class="glitch-text">WEB DESIGN & DEVELOPMENT</h1>
@@ -796,112 +799,77 @@
 </script>
 
 
-    <!-- Scripts -->
-    <script src="pazeycoding.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const button = document.getElementById("themeToggle");
-            const icon = document.getElementById("themeIcon");
+     <script src="pazeycoding.js"></script>
 
-            if (!button) return;
 
-            button.addEventListener("click", function (e) {
-                e.preventDefault();
-                document.body.classList.toggle("light-mode");
-
-                if (document.body.classList.contains("light-mode")) {
-                    icon.textContent = "☀";
-                    localStorage.setItem("theme", "light");
-                } else {
-                    icon.textContent = "☾";
-                    localStorage.setItem("theme", "dark");
-                }
-            });
-
-            if (localStorage.getItem("theme") === "light") {
-                document.body.classList.add("light-mode");
-                icon.textContent = "☀";
-            }
-        });
-    </script>
-    
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.querySelector(".testimonial-slider");
+    // toggle code
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-    if (!slider) return;
+    const button = document.getElementById("themeToggle");
+    const icon = document.getElementById("themeIcon");
 
-    const slides = slider.querySelectorAll(".testimonial-slide");
-    const dots = slider.querySelectorAll(".dot");
-    const prevBtn = slider.querySelector(".prev-btn");
-    const nextBtn = slider.querySelector(".next-btn");
+    if (!button) return;
 
-    if (!slides.length) return;
+    button.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-    let currentIndex = 0;
+        document.body.classList.toggle("light-mode");
 
-    function showSlide(index) {
-        currentIndex = (index + slides.length) % slides.length;
-
-        slides.forEach((slide, i) => {
-            slide.classList.toggle("active", i === currentIndex);
-        });
-
-        dots.forEach((dot, i) => {
-            dot.classList.toggle("active", i === currentIndex);
-        });
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener("click", function () {
-            showSlide(currentIndex - 1);
-        });
-    }
-
-    if (nextBtn) {
-        nextBtn.addEventListener("click", function () {
-            showSlide(currentIndex + 1);
-        });
-    }
-
-    dots.forEach((dot, i) => {
-        dot.addEventListener("click", function () {
-            showSlide(i);
-        });
+        if (document.body.classList.contains("light-mode")) {
+            icon.textContent = "☀";
+            localStorage.setItem("theme", "light");
+        } else {
+            icon.textContent = "☾";
+            localStorage.setItem("theme", "dark");
+        }
     });
 
-    showSlide(0);
+    /* Remember selected mode */
+    if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-mode");
+        icon.textContent = "☀";
+    }
+
 });
 </script>
 
-<!-- Mobile Navigation Fix -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
+    const dropdown = document.querySelector("#navLinks .dropdown");
+    const servicesToggle = dropdown?.querySelector(".dropdown-toggle");
 
-    if (!menuToggle || !navLinks) return;
+    if (!dropdown || !servicesToggle) return;
 
-    menuToggle.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-        menuToggle.classList.toggle("active");
+    servicesToggle.addEventListener("click", function (event) {
+        if (window.innerWidth <= 768) {
+            event.preventDefault();
+            event.stopPropagation();
 
-        const isOpen = navLinks.classList.contains("active");
-        menuToggle.setAttribute("aria-expanded", isOpen);
+            dropdown.classList.toggle("active");
+        }
     });
 
-    // Close menu when a navigation link is clicked
-    navLinks.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            // Allow dropdown toggles to be handled separately
-            if (link.classList.contains("dropdown-toggle")) return;
+    // Prevent taps inside the dropdown from closing the main menu
+    dropdown.querySelector(".dropdown-menu")?.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
 
-            navLinks.classList.remove("active");
-            menuToggle.classList.remove("active");
-            menuToggle.setAttribute("aria-expanded", "false");
+    // Close the dropdown after choosing a service
+    dropdown.querySelectorAll(".dropdown-menu a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            dropdown.classList.remove("active");
         });
     });
 });
 </script>
+
 </body>
 </html>
