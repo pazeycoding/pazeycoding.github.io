@@ -32,13 +32,7 @@
             navLinks.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
+
 
         // Active navigation highlighting
         const sections = document.querySelectorAll('section');
