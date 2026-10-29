@@ -2117,3 +2117,80 @@ body.light-mode .back-to-top:hover {
         pointer-events: auto !important;
     }
 }
+
+
+/* MOBILE SERVICES DROPDOWN */
+@media screen and (max-width: 768px) {
+
+    #navLinks .dropdown {
+        position: relative;
+        width: 100%;
+    }
+
+    #navLinks .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    #navLinks .dropdown-menu {
+        display: none;
+        position: static;
+        width: 100%;
+        min-width: 0;
+        padding: 5px 0 5px 15px;
+        margin: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    #navLinks .dropdown.open > .dropdown-menu {
+        display: block;
+    }
+
+    #navLinks .dropdown-menu li {
+        display: block;
+        width: 100%;
+    }
+
+    #navLinks .dropdown-menu .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: 12px 10px;
+        box-sizing: border-box;
+        white-space: normal;
+    }
+
+    #navLinks .dropdown.open .arrow {
+        display: inline-block;
+        transform: rotate(180deg);
+    }
+
+    #navLinks .arrow {
+        transition: transform 0.2s ease;
+    }
+}
+
+/* Centre Services in the mobile navigation */
+@media screen and (max-width: 768px) {
+
+    #navLinks .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #navLinks .dropdown-toggle .arrow {
+        flex-shrink: 0;
+    }
+
+}
