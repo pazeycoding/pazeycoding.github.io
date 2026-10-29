@@ -23,14 +23,74 @@
             }
         }
 
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
+// Mobile menu toggle
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
+/* ========================================
+   MOBILE MENU AND SERVICES DROPDOWN
+======================================== */
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+const servicesDropdown = document.querySelector('#navLinks .dropdown');
+const servicesToggle = document.querySelector(
+    '#navLinks .dropdown-toggle'
+);
+
+if (menuToggle && navLinks) {
+
+    // Open and close the hamburger menu
+    menuToggle.addEventListener('click', function () {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Services dropdown: tap to expand on mobile
+    if (servicesDropdown && servicesToggle) {
+
+        servicesToggle.setAttribute('aria-expanded', 'false');
+
+        servicesToggle.addEventListener('click', function (e) {
+
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const isOpen = servicesDropdown.classList.toggle('open');
+
+                servicesToggle.setAttribute(
+                    'aria-expanded',
+                    String(isOpen)
+                );
+            }
         });
+    }
+
+    // Close the menu when a normal navigation link is selected.
+    // Do NOT close it when Services itself is tapped.
+    navLinks.querySelectorAll('a').forEach(function (link) {
+
+        link.addEventListener('click', function () {
+
+            if (link.classList.contains('dropdown-toggle')) {
+                return;
+            }
+
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+
+            // Reset the Services submenu
+            if (servicesDropdown) {
+                servicesDropdown.classList.remove('open');
+            }
+
+            if (servicesToggle) {
+                servicesToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+}
+
 
 
 
@@ -68,18 +128,36 @@
         updateActiveNav();
 
         // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+  
+/* Smooth scrolling, excluding dropdown toggles */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener('click', function (e) {
+
+        // Let the mobile dropdown handler handle Services
+        if (anchor.classList.contains('dropdown-toggle')) {
+            if (window.innerWidth <= 768) {
+                return;
+            }
+        }
+
+        const href = anchor.getAttribute('href');
+
+        if (!href || href === '#') return;
+
+        const target = document.querySelector(href);
+
+        if (target) {
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
-        });
+        }
+    });
+});
 
         // Feature tabs functionality
         const tabs = document.querySelectorAll('.tab-item');
@@ -237,3 +315,4 @@
         showSlide(index);
     }, 6000);
 });
+
