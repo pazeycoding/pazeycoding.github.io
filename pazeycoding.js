@@ -1,28 +1,29 @@
 // JavaScript Document
 
 // Create floating particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
+function createParticles() {
+    const particlesContainer = document.getElementById('particles');
 
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 15 + 's';
-                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
-                
-                // Randomly assign orange or blue color
-                if (Math.random() > 0.5) {
-                    particle.style.setProperty('--particle-color', '#00B2FF');
-                    const before = particle.style.getPropertyValue('--particle-color');
-                    particle.style.background = '#00B2FF';
-                }
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
+    // Stop if this page has no particles container
+    if (!particlesContainer) return;
 
+    const particleCount = 30;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration =
+            (Math.random() * 10 + 15) + 's';
+
+        particle.style.background = Math.random() > 0.5
+            ? '#00B2FF'
+            : '#9B41F2';
+
+        particlesContainer.appendChild(particle);
+    }
+}
 // Mobile menu toggle
 
 /* ========================================
@@ -177,13 +178,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         });
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your form submission logic here
-            alert('Message sent! We\'ll get back to you soon.');
-            this.reset();
-        });
 
         // Initialize particles
         createParticles();
@@ -274,45 +268,86 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }, 3000);
 
-        document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.getElementById('prevTestimonial');
-    const nextBtn = document.getElementById('nextTestimonial');
-    
+       
+/* ========================================
+   TESTIMONIAL SLIDER
+======================================== */
+
+(function () {
+    const slider = document.querySelector(".testimonial-slider");
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll(".testimonial-slide");
+    const dots = slider.querySelectorAll(".slider-dots .dot");
+    const prevButton = slider.querySelector("#prevTestimonial");
+    const nextButton = slider.querySelector("#nextTestimonial");
+
     if (!slides.length) return;
 
     let currentIndex = 0;
+    let autoAdvance;
+    const intervalTime = 6000;
 
     function showSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+
         slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-            dots[i].classList.toggle('active', i === index);
+            slide.classList.toggle("active", i === currentIndex);
         });
-        currentIndex = index;
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === currentIndex);
+            dot.setAttribute(
+                "aria-current",
+                i === currentIndex ? "true" : "false"
+            );
+        });
     }
 
-    prevBtn.addEventListener('click', () => {
-        let index = (currentIndex - 1 + slides.length) % slides.length;
+    function startAutoAdvance() {
+        clearInterval(autoAdvance);
+
+        autoAdvance = setInterval(() => {
+            showSlide(currentIndex + 1);
+        }, intervalTime);
+    }
+
+    function goToSlide(index) {
         showSlide(index);
+        startAutoAdvance();
+    }
+
+    prevButton?.addEventListener("click", () => {
+        goToSlide(currentIndex - 1);
     });
 
-    nextBtn.addEventListener('click', () => {
-        let index = (currentIndex + 1) % slides.length;
-        showSlide(index);
+    nextButton?.addEventListener("click", () => {
+        goToSlide(currentIndex + 1);
     });
 
-    dots.forEach(dot => {
-        dot.addEventListener('click', (e) => {
-            let index = parseInt(e.target.getAttribute('data-index'));
-            showSlide(index);
+    dots.forEach((dot, index) => {
+        dot.style.cursor = "pointer";
+        dot.addEventListener("click", () => {
+            goToSlide(index);
         });
     });
 
-    // Auto-advance every 6 seconds
-    setInterval(() => {
-        let index = (currentIndex + 1) % slides.length;
-        showSlide(index);
-    }, 6000);
-});
+    // Pause while the visitor is interacting with the slider
+    slider.addEventListener("mouseenter", () => {
+        clearInterval(autoAdvance);
+    });
 
+    slider.addEventListener("mouseleave", startAutoAdvance);
+
+    // Pause when the browser tab is hidden
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            clearInterval(autoAdvance);
+        } else {
+            startAutoAdvance();
+        }
+    });
+
+    showSlide(0);
+    startAutoAdvance();
+})();
